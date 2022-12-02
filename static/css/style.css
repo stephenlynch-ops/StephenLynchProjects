@@ -1,0 +1,25 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+    color: #000066;
+}
+
+.nav-link,
+.nav-link:hover,
+.post-link,
+.post-link:hover {
+    color: #000066;
+    text-decoration: none !important;
+}
+
+.space-container {
+    height: 90px;
+}
+
+.card-img-top {
+    max-height: 300px !important;
+}
+
+.language-badge {
+    max-height: 50px;
+    max-width: 50px;
+}

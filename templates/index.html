@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container space-container p-0 mx-1 my-auto">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <div class="col-12 mt-3 left">
+            <div class="row">
+            {% for project in project_list %}
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <!-- Post Image Section -->
+                            <div class="image-container">
+                                {% if "placeholder" in project.image1.url %}
+                                <img class="card-img-top" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670008046/noimage_thkqt6.jpg" alt="Nice image of code">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ project.image1.url }}">
+                                {% endif %}
+                                <div class="image-flash">
+                                    <p class="headline">{{ project.headline }}</p>
+                                </div>
+                            </div>
+                            <!-- Post Heading Section -->
+                            <a href="#" class="post-link">
+                                <h2 class="card-title">{{ project.project_title }}</h2>
+                            </a>
+                            <!-- Post Like(s) Section -->
+                            <hr />
+                            <p class="card-text text-muted h6">{{ project.post_date }}</p>
+                            <div class="row">
+                                {% if project.html %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/html_tplvkf.jpg" alt="html">
+                                    </div>
+                                {% endif %}
+                                {% if project.css %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/css_ho0wlt.jpg" alt="css">
+                                    </div>
+                                {% endif %}
+                                {% if project.javascript %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/javascript_pxjkwr.jpg" alt="JavaScript">
+                                    </div>
+                                {% endif %}
+                                {% if project.python %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/python_slhiw1.jpg" alt="Python">
+                                    </div>
+                                {% endif %}
+                                {% if project.flask %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/flask_jb3hu8.jpg" alt="Flask">
+                                    </div>
+                                {% endif %}
+                                {% if project.react %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/react_qyvmbm.jpg" alt="React">
+                                    </div>
+                                {% endif %}
+                                {% if project.django %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/django_shmu8y.jpg" alt="Django">
+                                    </div>
+                                {% endif %}
+                                {% if project.bootstrap %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/bootstrap_fwldlg.jpg" alt="Bootstrap">
+                                    </div>
+                                {% endif %}
+                                {% if project.java %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/java_qi9fxh.jpg" alt="Java">
+                                    </div>
+                                {% endif %}
+                                {% if project.sql %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/sql_vrg4oh.jpg" alt="sql">
+                                    </div>
+                                {% endif %}
+                                {% if project.jquery %}
+                                    <div class="col-1">
+                                        <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/jquery_iluuk8.jpg" alt="jQuery">
+                                    </div>
+                                {% endif %}
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            {% if forloop.counter|divisibleby:3 %}
+            </div>
+            <div class="row">
+            {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}"
+            class="page-link">&laquo; PREV</a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}"
+            class="page-link">NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+</div>
+{%endblock%}
