@@ -1,6 +1,7 @@
 body {
     font-family: 'Work Sans', sans-serif;
     color: #000066;
+    background-color: #f5f5f5;
 }
 
 .nav-link,
@@ -20,6 +21,6 @@ body {
 }
 
 .language-badge {
-    max-height: 50px;
-    max-width: 50px;
+    max-height: 35px;
+    max-width: 35px;
 }
