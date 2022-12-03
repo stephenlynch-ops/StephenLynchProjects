@@ -10,7 +10,6 @@ STATUS = (
 
 class Project(models.Model):
     project_title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
     headline = models.CharField(max_length=200, null=True, blank=True)
     post_date = models.DateField(auto_now_add=True)
     task = models.TextField(null=True, blank=True)

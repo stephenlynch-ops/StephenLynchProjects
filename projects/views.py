@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
 from . models import Project
 from . forms import ProjectForm
 
@@ -25,7 +26,9 @@ def add_project(request):
             messages.success(request, 'Project has successfully been added!')
             return redirect(reverse('add_project'))
         else:
-            form = ProjectForm()
+            messages.error(request, 'Project could not be added at this time, check the form is valid')
+    else:
+        form = ProjectForm()
 
     template = 'add_project.html'
 
@@ -36,7 +39,7 @@ def add_project(request):
     return render(request, template, context)
 
 
-def edit_project(request, prpject_id):
+def edit_project(request, project_id):
     """ Edit a project in the database """
     project = get_object_or_404(Project, pk=project_id)
     if request.method == 'POST':
