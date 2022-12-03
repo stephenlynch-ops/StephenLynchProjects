@@ -38,7 +38,7 @@
                                 {% else %}
                                 <img class="card-img-top" src="{{ project.image1.url }}">
                                 {% endif %}
-                                <div class="image-flash">
+                                <div class="image-flash mt-2">
                                     <p class="headline">{{ project.headline }}</p>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                             <!-- Post Like(s) Section -->
                             <hr />
                             <p class="card-text text-muted h6">{{ project.post_date }}</p>
-                            <div class="row">
+                            <div class="row mt-3">
                                 {% if project.html %}
                                     <div class="col-1">
                                         <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/html_tplvkf.jpg" alt="html">
@@ -105,7 +105,17 @@
                                         <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/jquery_iluuk8.jpg" alt="jQuery">
                                     </div>
                                 {% endif %}
-                            </div>    
+                            </div>  
+                            {% if request.user.is_superuser %}
+                            <div class="row mt-3">
+                                <div class="col-6 text-center">
+                                    <a href="{% url 'edit_project' project.id %}">Edit Project</a>
+                                </div>
+                                <div class="col-6 text-center">
+                                    <a href="{% url 'delete_project' project.id %}">Delete Project</a>
+                                </div>
+                            </div>
+                            {% endif %}          
                         </div>
                     </div>
                 </div>
