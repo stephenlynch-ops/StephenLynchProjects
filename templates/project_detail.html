@@ -107,8 +107,12 @@
                     {% endif %}
                 </ul>
                 <div class="card-body">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
+                    {% if project.link_to_site %}
+                    <a href="{{ project.link_to_site }}" target="_blank" rel="noopener" class="card-link">Link To Live Site</a>
+                    {% endif %}
+                    {% if project.link_to_repo %}
+                    <a href="{{ project.link_to_repo }}" target="_blank" rel="noopener" class="card-link">Link To Repo</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
