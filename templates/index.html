@@ -12,10 +12,22 @@
 {% block content %}
 <div class="container-fluid">
     <div class="row">
+        <div class="col">
+            <div class="col-12 col-md-6 order-md-first">
+                <p class="text-muted mt-3 text-center text-md-left">
+                    {% if search_term != 'None_None' %}
+                        <span class="small"><a href="{% url 'home' %}">Projects</a> | </span>
+                    {% endif %}
+                    {{ projects|length }} Projects{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
-            {% for project in project_list %}
+            {% for project in projects %}
                 <div class="col-md-3">
                     <div class="card mb-4">
                         <div class="card-body">

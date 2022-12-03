@@ -1,10 +1,28 @@
-from django.shortcuts import render, get_object_or_404
-from django.views import generic
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
+from django.db.models import Q
 from projects.models import Project
 
 
-class ProjectList(generic.ListView):
-    model = Project
-    queryset = Project.objects.filter(status=1).order_by('-post_date')
-    template_name = 'index.html'
-    paginate_by = 6
+def portfolio(request):
+    """ A view to show all projects, including search queries """
+
+    projects = Project.objects.all()
+    query = None
+
+    if request.GET:
+        if 'q' in request.GET:
+            query = request.GET['q']
+            if not query:
+                messages.error(request, "You didn't enter any search criteria")
+                return redirect(reverse('home'))
+
+            queries = Q(language_summary__icontains=query)
+            projects = projects.filter(queries)
+
+    context = {
+        'projects': projects,
+        'search_term': query,
+    }
+
+    return render(request, 'index.html', context)

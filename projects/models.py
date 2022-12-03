@@ -30,6 +30,7 @@ class Project(models.Model):
     java = models.BooleanField(default=False)
     sql = models.BooleanField(default=False)
     jquery = models.BooleanField(default=False)
+    language_summary = models.TextField(null=True, blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     link_to_repo = models.CharField(max_length=300, null=True, blank=True)
     link_to_site = models.CharField(max_length=300, null=True, blank=True)

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from . models import Project
 from . forms import ProjectForm
@@ -24,7 +24,7 @@ def add_project(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Project has successfully been added!')
-            return redirect(reverse('add_project'))
+            return redirect(('home'))
         else:
             messages.error(request, 'Project could not be added at this time, check the form is valid')
     else:
