@@ -10,5 +10,110 @@
 {% endblock %}
 
 {% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-8 mx-auto">
+            <div class="card">
+                <h5 class="card-header text-center">{{ project.headline }}</h5>
+                {% if "placeholder" in project.image1 %}
+                <img class="card-img-top article-image mx-auto" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670008046/noimage_thkqt6.jpg" alt="Nice image of code">
+                {% else %}
+                <img class="card-img-top article-image mx-auto" src="{{ project.image1.url }}" alt="Card image cap">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ project.project_title }}</h5>
+                    <div class="row">
+                    {% if project.html %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/html_tplvkf.jpg" alt="html">
+                        </div>
+                    {% endif %}
+                    {% if project.css %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/css_ho0wlt.jpg" alt="css">
+                        </div>
+                    {% endif %}
+                    {% if project.javascript %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/javascript_pxjkwr.jpg" alt="JavaScript">
+                        </div>
+                    {% endif %}
+                    {% if project.python %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/python_slhiw1.jpg" alt="Python">
+                        </div>
+                    {% endif %}
+                    {% if project.flask %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/flask_jb3hu8.jpg" alt="Flask">
+                        </div>
+                    {% endif %}
+                    {% if project.react %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/react_qyvmbm.jpg" alt="React">
+                        </div>
+                    {% endif %}
+                    {% if project.django %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/django_shmu8y.jpg" alt="Django">
+                        </div>
+                    {% endif %}
+                    {% if project.bootstrap %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/bootstrap_fwldlg.jpg" alt="Bootstrap">
+                        </div>
+                    {% endif %}
+                    {% if project.java %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/java_qi9fxh.jpg" alt="Java">
+                        </div>
+                    {% endif %}
+                    {% if project.sql %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/sql_vrg4oh.jpg" alt="sql">
+                        </div>
+                    {% endif %}
+                    {% if project.jquery %}
+                        <div class="col-1 ml-2">
+                            <img class="language-badge" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670002899/jquery_iluuk8.jpg" alt="jQuery">
+                        </div>
+                    {% endif %}
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    {% if project.task %}
+                    <li class="list-group-item">
+                        <h5>The Task</h5>
+                        {{ project.task | safe}}
+                    </li>
+                    {% endif %}
+                    {% if project.actions %}
+                    <li class="list-group-item">
+                        <h5>What I did</h5>
+                        {{ project.actions | safe}}
+                    </li>
+                    {% endif %}
+                    {% if project.problems %}
+                    <li class="list-group-item">
+                        <h5>Problems</h5>
+                        {{ project.problems | safe}}
+                    </li>
+                    {% endif %}
+                    {% if project.knowledge_gained %}
+                    <li class="list-group-item">
+                        <h5>What I Learnt</h5>
+                        {{ project.knowledge_gained | safe}}
+                    </li>
+                    {% endif %}
+                </ul>
+                <div class="card-body">
+                    <a href="#" class="card-link">Card link</a>
+                    <a href="#" class="card-link">Another link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     {{ project.project_title }}
 {% endblock %}
