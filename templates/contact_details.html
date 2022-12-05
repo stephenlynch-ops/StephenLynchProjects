@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
 
 {% block page_header %}
     <div class="container header-container space-container p-0 mx-1 my-auto">
@@ -14,20 +13,40 @@
 <div class="container-fluid">
     <div class="row mt-2">
         <div class="col text-center">
-            <h2>You are currently adding a new project</h2>
+            <h2>Personal Information</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-8 mx-auto">
-            <form method="POST" action="{% url 'add_project' %}" class="form mb-2" enctype="multipart/form-data">
-                {% csrf_token %}
-                {{ form | crispy }}
-                <div class="text-right">
-                    <a href="{% url 'home' %}" class="btn btn-secondary rounded-0">Cancel</a>
-                    <button class="btn btn-secondary rounded-0" type="submit">Add Project</button>
-                </div>
-            </form>
+        <div class="col-12 text-center col-md-8 mx-auto">
+            {% if "noface" in contact.user_image.url %}
+                <img src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670260748/noface_pxyh0t.jpg" alt="No image provided for profile" class="border border-black contact-image mx-auto">
+            {% else %}
+                <img class="contact-image mx-auto" src="{{ contact.user_image }}" alt="A cheesy picture of me">
+            {% endif %}
+            {% if contact.user_name %}
+                <h2 class="text-uppercase">{{ contact.user_name}}</h2>
+            {% endif %}
+            {% if contact.about_me %}
+                <h3>About Me</h3>
+                <p>{{ contact.about_me | safe }}</p>
+            {% endif %}
+            <h3 class="mb-3">Contact Information</h3>
+            {% if contact.email %}
+                <h5>{{ contact.email }}</h5>
+                <hr>
+            {% endif %}
+            {% if contact.linkedin %}
+                <h5><a href="{{ contact.linkedin }}" rel="noopener" target="_blank">Linkedin Page</a></h5>
+                <hr>
+            {% endif %}
+            {% if contact.github_repo %}
+                <h5><a href="{{ contact.github_repo }}" rel="noopener" target="_blank">GitHub Repositories Page</a></h5>
+                <hr>
+            {% endif %}
         </div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
     </div>
 </div>
 {% endblock %}

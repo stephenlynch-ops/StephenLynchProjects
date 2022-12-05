@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     'portfolio',
     'projects',
+    'contact',
 ]
 
 SITE_ID = 1

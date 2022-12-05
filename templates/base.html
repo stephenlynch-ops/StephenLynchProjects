@@ -72,7 +72,7 @@
                                         <a href="{% url 'add_project' %}" class="dropdown-item">Add A Project</a>
                                         <a href="#" class="dropdown-item">Edit A Project</a>
                                     {% endif %}
-                                    <a href="#" class="dropdown-item">Contact Details</a>
+                                    <a href="{% url 'contact_details' %}" class="dropdown-item">Contact Details</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                                 {% else %}
                                     <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>

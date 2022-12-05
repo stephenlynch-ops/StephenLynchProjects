@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+    <div class="container header-container space-container p-0 mx-1 my-auto">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row mt-2">
+        <div class="col text-center">
+            <h2>Contact Information</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8 mx-auto">
+            <form method="POST" action="{% url 'edit_contact_details' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-right">
+                    <a href="{% url 'home' %}" class="btn btn-secondary rounded-0">Cancel</a>
+                    <button class="btn btn-secondary rounded-0" type="submit">Update Contact Details</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+{% endblock %}
