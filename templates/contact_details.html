@@ -16,6 +16,15 @@
             <h2>Personal Information</h2>
         </div>
     </div>
+    {% if request.user.is_superuser %}
+    <div class="row">
+        <div class="col-12">
+            <div class="col">
+                <a href="{% url 'edit_contact_details' %}">Edit Contact Details</a>
+            </div>
+        </div>
+    </div>
+    {% endif %}
     <div class="row">
         <div class="col-12 text-center col-md-8 mx-auto">
             {% if "noface" in contact.user_image.url %}
@@ -37,6 +46,14 @@
             {% endif %}
             {% if contact.linkedin %}
                 <h5><a href="{{ contact.linkedin }}" rel="noopener" target="_blank">Linkedin Page</a></h5>
+                <hr>
+            {% endif %}
+            {% if contact.facebook %}
+                <h5><a href="{{ contact.facebook }}" rel="noopener" target="_blank">Facebook Page</a></h5>
+                <hr>
+            {% endif %}
+            {% if contact.twitter %}
+                <h5><a href="{{ contact.twitter }}" rel="noopener" target="_blank">Twitter Page</a></h5>
                 <hr>
             {% endif %}
             {% if contact.github_repo %}
