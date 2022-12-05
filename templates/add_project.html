@@ -12,19 +12,19 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row">
+    <div class="row mt-2">
         <div class="col text-center">
             <h2>You are currently adding a new project</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-8 clo-md-6 mx-auto">
+        <div class="col-12 col-md-8 mx-auto">
             <form method="POST" action="{% url 'add_project' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-right">
-                    <a href="{% url 'home' %}" class="btn btn-outline-black rounded-0">Cancel</a>
-                    <button class="btn btn-outline-black rounded-0" type="submit">Add Project</button>
+                    <a href="{% url 'home' %}" class="btn btn-secondary rounded-0">Cancel</a>
+                    <button class="btn btn-secondary rounded-0" type="submit">Add Project</button>
                 </div>
             </form>
         </div>

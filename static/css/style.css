@@ -13,16 +13,25 @@ body {
 }
 
 .space-container {
-    height: 90px;
+    height: 124px;
 }
 
 .card-img-top {
-    max-height: 300px !important;
+    max-height: 500px !important;
 }
 
 .language-badge {
     max-height: 35px;
     max-width: 35px;
+}
+
+.dropdown-menu {
+    margin-right: 1px;
+}
+
+.image-holder {
+    height: 230px;
+    overflow: hidden;
 }
 
 /* Project detail styles */
@@ -47,4 +56,24 @@ body {
 
 .toast-capper {
     height: 2px;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 991px){
+    .space-container {
+        height: 143px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .space-container {
+        height: 117px;
+    }
+}
+
+@media screen and (min-width: 1311px){
+    .space-container {
+        height: 88px
+    }
 }

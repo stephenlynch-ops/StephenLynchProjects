@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container space-container p-0 mx-1 my-auto">
+    <div class="container header-container space-container p-0 mb-5 my-auto">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -11,25 +11,28 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-8 mx-auto">
+    <div class="row mt-2">
+        <div class="col-12 col-md-8 mx-auto">
             <div class="card">
+                
+                <h2 class="card-header text-center">{{ project.headline }}</h2>
+
                 {% if request.user.is_superuser %}
-                <div class="col-4">
-                    <a href="{% url 'edit_project' project.id %}">Edit This Project</a>
+                <div class="col">
+                    <a href="{% url 'edit_project' project.id %}">Edit Project</a>
                 </div>
-                <div class="col-4">
-                    <a href="{% url 'delete_project' project.id %}">Delete This Project</a>
+                <div class="col">
+                    <a href="{% url 'delete_project' project.id %}">Delete Project</a>
                 </div>
                 {% endif %}
-                <h5 class="card-header text-center">{{ project.headline }}</h5>
+
                 {% if "placeholder" in project.image1.url %}
-                    <img class="card-img-top article-image mx-auto" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670008046/noimage_thkqt6.jpg" alt="Nice image of code">
+                    <img class="card-img-top article-image preview-image mx-auto" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670008046/noimage_thkqt6.jpg" alt="Nice image of code">
                 {% else %}
-                <img class="card-img-top article-image mx-auto" src="{{ project.image1.url }}" alt="Card image cap">
+                    <img class="card-img-top article-image preview-image mx-auto" src="{{ project.image1.url }}" alt="" >
                 {% endif %}
                 <div class="card-body">
-                    <h5 class="card-title">{{ project.project_title }}</h5>
+                    <h3 class="card-title">{{ project.project_title }}</h3>
                     <div class="row">
                     {% if project.html %}
                         <div class="col-1 ml-2">
@@ -88,38 +91,74 @@
                     {% endif %}
                     </div>
                 </div>
+                <div>
+                    {% if project.link_to_site %}
+                    <div class="col-8 text-center m-0 mx-auto">
+                        <a href="{{ project.link_to_site }}" target="_blank" rel="noopener" class="card-link">Live Site Link</a>
+                    </div>
+                    {% endif %}
+                    {% if project.link_to_repo %}
+                    <div class="col-8 text-center m-0 mx-auto">
+                        <a href="{{ project.link_to_repo }}" target="_blank" rel="noopener" class="card-link">Repository Link</a>
+                    </div>
+                    {% endif %}
+                </div>
                 <ul class="list-group list-group-flush">
                     {% if project.task %}
                     <li class="list-group-item">
                         <h5>The Task</h5>
-                        {{ project.task | safe}}
+                        {{ project.task | safe }}
                     </li>
                     {% endif %}
                     {% if project.actions %}
                     <li class="list-group-item">
                         <h5>What I did</h5>
-                        {{ project.actions | safe}}
+                        {{ project.actions | safe }}
                     </li>
                     {% endif %}
                     {% if project.problems %}
                     <li class="list-group-item">
                         <h5>Problems</h5>
-                        {{ project.problems | safe}}
+                        {{ project.problems | safe }}
                     </li>
                     {% endif %}
                     {% if project.knowledge_gained %}
                     <li class="list-group-item">
                         <h5>What I Learnt</h5>
-                        {{ project.knowledge_gained | safe}}
+                        {{ project.knowledge_gained | safe }}
+                    </li>
+                    <li class="list-group-item">
+                        {% if project.image2 or project.image3 or project.image4 or project.image5 %}
+                            <h5>Project Images</h5>
+                            {% if project.image2 %}
+                            <h6 class="m-2">{{ project.image2_title }}</h6>
+                            <img class="card-img-top article-image preview-image mx-auto" src="{{ project.image2.url }}" alt="{{ project.image2_title }}" >
+                            {% endif %}
+                            <br>
+                            {% if project.image3 %}
+                            <h6 class="m-2">{{ project.image3_title }}</h6>
+                            <img class="card-img-top article-image preview-image mx-auto" src="{{ project.image3.url }}" alt="{{ project.image3_title }}" >
+                            {% endif %}
+                            <br>
+                            {% if project.image4 %}
+                            <h6 class="m-2">{{ project.image4_title }}</h6>
+                            <img class="card-img-top article-image preview-image mx-auto" src="{{ project.image4.url }}" alt="{{ project.image4_title }}" >
+                            {% endif %}
+                            <br>
+                            {% if project.image5 %}
+                            <h6 class="m-2">{{ project.image5_title }}</h6>
+                            <img class="card-img-top article-image preview-image mx-auto" src="{{ project.image5.url }}" alt="{{ project.image5_title }}" >
+                            {% endif %}
+                        {% endif %}
                     </li>
                     {% endif %}
                 </ul>
-                <div class="card-body">
+                <div class="card-footer">
                     {% if project.link_to_site %}
                     <a href="{{ project.link_to_site }}" target="_blank" rel="noopener" class="card-link">Link To Live Site</a>
                     {% endif %}
                     {% if project.link_to_repo %}
-                    <a href="{{ project.link_to_repo }}" target="_blank" rel="noopener" class="card-link">Link To Repo</a>
+                    <a href="{{ project.link_to_repo }}" target="_blank" rel="noopener" class="card-link">Link To Repository</a>
                     {% endif %}
                 </div>
             </div>
