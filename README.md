@@ -69,7 +69,7 @@ I also wanted the card format to be reflected here in the project detail page, a
 
 - About Me Page
 
-<img src="media/about_me.jpg" alt="About me page layout">
+<img src="media/about_me_layout.jpg" alt="About me page layout">
 
 This also has the card format, but in a different configuration - the image is to the side.
 
