@@ -1,108 +1,284 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Stephen Lynch Portfolio
 
-Welcome Stephen Lynch,
+<img src="media/responsive_images.jpg" alt="Images of the site being responsive">
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+Stephen Lynch Portfolio is a site designed to show of the projects I have worked on.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+It is designed to have a card for each project with brief details about the project on it. Then when the user clicks the title they are taken to a project detail page that gives more information about the project, what I did, problems faced etc.
 
-## Gitpod Reminders
+It is designed so that as I work on more projects I can add them to this site and edit them as the project evolves.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+If needed there is also the ability to delete projects from the site.
 
-`python3 -m http.server`
+There is also an 'About Me' page that gives a bit of information about me and some links to social media site and my email address.
 
-A blue button should appear to click: _Make Public_,
+### [View the live application on Heroku](https://stephenlynch.herokuapp.com/)
 
-Another blue button should appear to click: _Open Browser_.
+## Table of contents
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+- [UX](#UX)
+    - [Business goals](#Business-goals)
+    - [User goals](#User-goals)
+    - [Layout Design](#Layout-design)
+    - [Website pallette](#Website-pallette)
+- [Features](#Features)
+- [Technology](#Technology)
+- [Testing](#Testing)
+    - [Funcionality testing](#Functionality-testing)
+    - [Compatability testing](#Compatability-testing)
+    - [Code validation](#Code-validation)
+    - [Issues found during testing](#Issues-found-during-testing)
+    - [Performance testing](#Performance-testing)
+- [Deployment](#Deployment)
+- [Credits](#Credits)
+- [Screenshots](#Screenshots)
 
-A blue button should appear to click: _Make Public_,
+## UX
 
-Another blue button should appear to click: _Open Browser_.
+### Business goals
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The aim of the site is to give people (who are interested) the ability to see some of the projects I have worked on. Equally it is a platform for me to maintain that documents my work as a web developer so I can reminisce about later in life.
 
-To log into the Heroku toolbelt CLI:
+It is designed in a simpe 3 page format, with the landing page showing the projects in card format. Each card gives a snapshot of information about the project, including the langauages and platforms used.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+There is a search bar on this page which allows users to filter the projects by langauage / platform.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+The second page is the project detail page, which has the same information as the landing page, but gives additional information like the project task, my actions, problems I faced and knowledge I gained.
 
-------
+The third page is the 'about me' page. This has (the best I could find) image of me and a paragraph about me. It also has my email address and some links to my social media. This is setup that if I were to add another account, Facebook for example, when I edit the page, it would automatically be added to this page.
 
-## Release History
+### User goals
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+User can view the projects and navigate throught the site easily. There is no setup for users to create accounts as this is not a desired function of the site. However I have an account that allows me to keep it up to date with CRUD functionality.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Layout Design
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+The layout is a simple blog layout and borrows the basic design from the CodeStar project. However it has been written from scratch using bootstrap the get the desired layout.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- Home Page layout
+# ADD LAYOUT DESIGN IMAGE HERE
+<img src="media/inital_home_layout.jpg" alt="Initial home page layout idea">
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+I wanted the projects laid out in card format as this gives a clean layout and maintains an organised page even on small screen sizes.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- Project Detail Page
+# ADD LAYOUT OF PROJECT DETAIL HERE
+<img src="media/weird_home_layout.jpg" alt="Weird home page layout">
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+I also wanted the card format to be reflected here in the project detail page, almost as if the user has focused in on the project and has gained more detail by doing so.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- About Me Page
+# ADD ABOUT ME LAYOUT IMAGE HERE
+<img src="media/product_list_layout.jpg" alt="Product list layout">
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+This also has the card format, but in a different configuration - the image is to the side.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Website pallette
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The pallette for this is a simple light background and dark blue text. I chose the light background because all of my projects so far have been dark, so I wanted something that would make them show up.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+- Background color: #f5f5f5 Which is just off-white.
+- Font color: #000066 Which is a dark blue, almost like blue ink.
+- Font choice: Work Sans - tis a nice clean font.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Features
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+The site has 3 main pages that users will navigate through. These pages are;
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- Project list page
 
-------
+- Product detail page
 
-## FAQ about the uptime script
+- About me page
 
-**Why have you added this script?**
+There is a login, logout page for me. I also have pages for adding / editing projects / contact details.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+There is a 404 page for any errors in page navigation.
 
-**How will this affect me?**
+### Existing Features
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+- Search Bar
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+    - The search bar allows users to search for projects based on languages / platforms that they enter.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+<img src="media/landing_page.jpg" alt="The landing page">
 
-**So….?**
+- The landing page
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+    - This has a card of each project within the database. The cards are equally setout to give the page a clean look with clear information about each project.
 
-**Can I opt out?**
+<img src="media/project_detail_page.jpg" alt="Project detail page">
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+- Project detail page
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+    - This is an enlarged card with more indepth detail about the selected project on it.
 
-**Anything more?**
+    - This information includes the task, actions, problems and knowledge gained.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+<img src="media/about_me_page.jpg" alt="About me page">
 
----
+- About me / contact page
 
-Happy coding!
+    - This has a little bit of information about me on it in the form of a paragraph.
+
+    - It also has links to my social media accounts and GitHub Repo.
+
+- Users feedback
+
+    - Throughout the site there are toasts that pop-up and give the me feedback on the actions I am carrying out out on the site - hopefully to stop me deleting something I shouldn't.
+
+<img src="media/toasts.jpg" alt="User feedback">
+
+## Technology
+
+### Security
+
+- The security aspects of the site are handled by the built in csrf token use for securing POST request.
+- Aspects of the site that are reserved for superusers are protected by the RequireLogin decorator in the code, so that only superusers can access them.
+- Images are securly stored on Cloudinary.
+
+### Python / Django
+
+- The programming language and framework.
+### HTML
+
+- The structure language of the site.
+
+### Bootstrap / CSS
+
+- The styling language and framework.
+
+### Font Awesome
+
+- The library for the icons used within the site
+
+### Cloudinary
+
+- The image storage for the site.
+
+### Allauth
+
+- User authentication, verification and account management.
+
+### Crispy Forms
+
+- Used for form context, styling and rendering.
+
+### Gunicorn
+
+- Web server for Python.
+
+## Testing
+
+### Functionality testing
+
+- The site was developed using the Chrome developer tools for the HTML and styling elements.
+
+#### Model Testing
+
+    class TestProjectModel(TestCase):
+    """ Inherits TestCase for all functions below
+    """
+
+    def test_project_creation(self):
+        """ Tests to see if a project can be created as expected """
+        project = Project.objects.create(project_title="Some Project")
+        self.assertEqual(project.project_title, "Some Project")
+
+
+The above test checks to see if a project can be added and it's title returned. 
+
+### Views Testing
+
+    class TestViews(TestCase):
+    """ Inherits TestCase for all functions below
+    """
+    def test_open_home_page_works(self):
+        """ Test the corrrect template is used
+        """
+        response = self.client.get('/')
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'index.html')
+
+This test checks to see if the index.html templates is used when the portfolio is called on the home page.
+#### Forms Testing
+
+    class TestProjectForm(TestCase):
+    """ Inherits TestCase for all tests below """
+    def test_contact_form_create_ok(self):
+        """ Test to see if we can create a test contact form """
+        form = ContactForm({'email':'me@world.com'})
+        self.assertTrue(form.is_valid())
+
+    class TestProjectForm(TestCase):
+    """ Inherits TestCase for all tests below """
+    def test_project_title_is_required(self):
+        """ Tests to see if the project title is a required field """
+        form = ProjectForm({'project_title': ''})
+        self.assertFalse(form.is_valid())
+
+These tests check to see if the required fields on the forms are flagged as errors if they are omitted.
+### Compatability testing
+
+- The site has been tested on multiple screen sizes and is responsive throughout.
+
+### Code validation
+
+- The HTML and CSS have been tested using jigsaw.w3.org with no errors showing.
+
+- The Python was also tested online with no errors showing.
+
+### Issues found during testing
+
+- When testing the models, views and forms with TestView I had an issue in getting the tests to run. This was because I had already deployed the site to Heroku and so had the database pointed to Postgres and not SQLite3.
+
+- Once the database was reset to SQLite the test ran ok.
+
+- As well as the automated testing I have thourghly tested the navigation, functionality and link aspects of the site and all are working as expected.
+
+### Performance testing
+
+- Site has been evaluated by Lighthouse and the report is below.
+
+<img src="media/lighthouse_report.jpg" alt="Lighthouse report">
+
+- While the SEO / Performance scores are high(ish), I would have liked to improve the other scores.
+
+## Deployment
+
+The site is deployed from Heroku.
+
+1. Click deploy from app home page
+
+2. Click GitHub link in deployment method and link the repository
+
+3. Click deploy branch button
+
+4. Click open app button
+
+As part of the deployment process the static and media files were located onto Cloudinary platform. This was done by linking the app to my Cloudinary account.
+
+# Future developments
+
+- The main task now is to keep on building projects to a level that they show my development as a developer. Then they can be added to this site as an 'interactive CV'.
+
+# Credits
+
+- The site is influenced by the CodeStar project.
+
+- StackOverflow proved a valuable resource for solving some of the bugs
+
+- All of the images are images from my other projects, the owners can be found in the respecive ReadMe files.
+
+- The other students on Slack helped me with the testing issues, clearly some had faced the same issue, such as the backport issues.
+
+## Screenshots
+
+### Landing Page
+<img src="media/landing_page.jpg" alt="The landing page">
+
+### Project Detail Page
+<img src="media/project_detail_page.jpg" alt="The project detail page">
+
+### About Me Page
+<img src="media/about_me_page.jpg" alt="About Me page">
