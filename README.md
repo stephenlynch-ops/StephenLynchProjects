@@ -56,20 +56,20 @@ User can view the projects and navigate throught the site easily. There is no se
 The layout is a simple blog layout and borrows the basic design from the CodeStar project. However it has been written from scratch using bootstrap the get the desired layout.
 
 - Home Page layout
-# ADD LAYOUT DESIGN IMAGE HERE
-<img src="media/inital_home_layout.jpg" alt="Initial home page layout idea">
+
+<img src="media/portfolio_layout.jpg" alt="Home page layout idea">
 
 I wanted the projects laid out in card format as this gives a clean layout and maintains an organised page even on small screen sizes.
 
 - Project Detail Page
-# ADD LAYOUT OF PROJECT DETAIL HERE
-<img src="media/weird_home_layout.jpg" alt="Weird home page layout">
+
+<img src="media/project_detail_layout.jpg" alt="Project detail page layout">
 
 I also wanted the card format to be reflected here in the project detail page, almost as if the user has focused in on the project and has gained more detail by doing so.
 
 - About Me Page
-# ADD ABOUT ME LAYOUT IMAGE HERE
-<img src="media/product_list_layout.jpg" alt="Product list layout">
+
+<img src="media/about_me.jpg" alt="About me page layout">
 
 This also has the card format, but in a different configuration - the image is to the side.
 
