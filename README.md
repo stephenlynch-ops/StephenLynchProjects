@@ -137,6 +137,12 @@ There is a 404 page for any errors in page navigation.
 - Aspects of the site that are reserved for superusers are protected by the RequireLogin decorator in the code, so that only superusers can access them.
 - Images are securly stored on Cloudinary.
 
+Users can still access the signup page in order to create an account, they can do this typing the below into the browser;
+
+<img src="media/signup_address.jpg" alt="User feedback"> 
+
+This however does not afford the user any additional powers over the site as the functionality is exclusivly for superusers.
+
 ### Python / Django
 
 - The programming language and framework.
