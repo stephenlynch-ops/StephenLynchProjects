@@ -19,6 +19,8 @@ def portfolio(request):
 
             queries = Q(language_summary__icontains=query)
             projects = projects.filter(queries).order_by('post_date')
+    else:
+        projects = projects.order_by('post_date')
 
     context = {
         'projects': projects,
