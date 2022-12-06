@@ -11,11 +11,6 @@
 
 {% block content %}
 <div class="container-fluid">
-    <div class="row mt-2">
-        <div class="col text-center">
-            <h2>Personal Information</h2>
-        </div>
-    </div>
     {% if request.user.is_superuser %}
     <div class="row">
         <div class="col-12">
@@ -25,45 +20,60 @@
         </div>
     </div>
     {% endif %}
-    <div class="row">
-        <div class="col-12 text-center col-md-8 mx-auto">
-            {% if "noface" in contact.user_image.url %}
-                <img src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670260748/noface_pxyh0t.jpg" alt="No image provided for profile" class="border border-black contact-image mx-auto">
-            {% else %}
-                <img class="contact-image mx-auto" src="{{ contact.user_image }}" alt="A cheesy picture of me">
-            {% endif %}
-            {% if contact.user_name %}
-                <h2 class="text-uppercase">{{ contact.user_name}}</h2>
-            {% endif %}
-            {% if contact.about_me %}
-                <h3>About Me</h3>
-                <p>{{ contact.about_me | safe }}</p>
-            {% endif %}
-            <h3 class="mb-3">Contact Information</h3>
-            {% if contact.email %}
-                <h5>{{ contact.email }}</h5>
-                <hr>
-            {% endif %}
-            {% if contact.linkedin %}
-                <h5><a href="{{ contact.linkedin }}" rel="noopener" target="_blank">Linkedin Page</a></h5>
-                <hr>
-            {% endif %}
-            {% if contact.facebook %}
-                <h5><a href="{{ contact.facebook }}" rel="noopener" target="_blank">Facebook Page</a></h5>
-                <hr>
-            {% endif %}
-            {% if contact.twitter %}
-                <h5><a href="{{ contact.twitter }}" rel="noopener" target="_blank">Twitter Page</a></h5>
-                <hr>
-            {% endif %}
-            {% if contact.github_repo %}
-                <h5><a href="{{ contact.github_repo }}" rel="noopener" target="_blank">GitHub Repositories Page</a></h5>
-                <hr>
-            {% endif %}
+    <div class="row mt-2">
+        <div class="col-12 col-md-8 mx-auto">
+            <div class="card mt-5 mb-3">
+                <div class="row no-gutters">
+                    <div class="col-md-4 contact-mug-shot-wrapper">
+                        <img class="contact-mug-shot" src="https://res.cloudinary.com/djsvtlliv/image/upload/v1670262126/x1igxbndyosr0vdexdgv.jpg" alt="A black and white image of Stephen">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">About Me</h5>
+                            <p class="card-text">{{ contact.about_me | safe }}</p>
+                            <p class="card-text"><small class="text-muted">Last updated: {{ contact.last_updated }}</small></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="card-body pb-0">
+                            <h5 class="card-title">Contact Information / Pages</h5>
+                            {% if contact.email %}
+                            <hr class="m-0">
+                            <div class="text-center p-2">
+                                <a href="#">{{ contact.email }}</a>
+                            </div>
+                            {% endif %}
+                            {% if contact.linkedin %}
+                            <hr class="m-0">
+                            <div class="text-center p-2">
+                                <a href="{{ contact.linkedin }}" rel="noopener" target="_blank">Linkedin Page</a>
+                            </div>
+                            {% endif %}
+                            {% if contact.github_repo %}
+                            <hr class="m-0">
+                            <div class="text-center p-2">
+                                <a href="{{ contact.github_repo }}" rel="noopener" target="_blank">Github Repository Page</a>
+                            </div>
+                            {% endif %}
+                            {% if contact.facebook %}
+                            <hr class="m-0">
+                            <div class="text-center p-2">
+                                <a href="{{ contact.facebook }}" rel="noopener" target="_blank">Facebook Page</a>
+                            </div>
+                            {% endif %}
+                            {% if contact.twitter %}
+                            <hr class="m-0">
+                            <div class="text-center p-2">
+                                <a href="{{ contact.twitter }}" rel="noopener" target="_blank">Twitter Page</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col"></div>
     </div>
 </div>
 {% endblock %}

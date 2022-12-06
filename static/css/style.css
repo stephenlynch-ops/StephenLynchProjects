@@ -41,6 +41,16 @@ body {
     max-width: 800px;
 }
 
+/* Contact stlye */
+
+.contact-mug-shot-wrapper {
+    max-width: 226px;
+}
+
+.contact-mug-shot {
+    max-width: 226px;
+}
+
 /* Toast Styles - not toast and jam!!! */
 
 .message-container {
