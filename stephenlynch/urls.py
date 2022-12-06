@@ -24,3 +24,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
 ]
+
+handler404 = 'stephenlynch.views.handler404'
