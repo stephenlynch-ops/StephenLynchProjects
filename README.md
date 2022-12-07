@@ -23,6 +23,7 @@ There is also an 'About Me' page that gives a bit of information about me and so
     - [Website pallette](#Website-pallette)
 - [Features](#Features)
 - [Technology](#Technology)
+    - [Security](#Security)
 - [Testing](#Testing)
     - [Funcionality testing](#Functionality-testing)
     - [Compatability testing](#Compatability-testing)
